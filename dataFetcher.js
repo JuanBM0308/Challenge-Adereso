@@ -28,7 +28,7 @@ export async function fetchStarWarsPlanet(name) {
 
 export async function fetchStarWarsStarship(name) {
     try {
-        const response = await fetch(`${STAR_WARS_API}starships/search=${name}`);
+        const response = await fetch(`${STAR_WARS_API}starships/?search=${name}`);
         const data = await response.json();
         return data.results.length ? data.results[0] : null;
     } catch (error) {

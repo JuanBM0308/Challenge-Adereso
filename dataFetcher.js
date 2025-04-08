@@ -4,6 +4,7 @@ import fetch from "node-fetch";
 const STAR_WARS_API = "https://swapi.dev/api/";
 const POKEMON_API = "https://pokeapi.co/api/v2/";
 
+// Información / Data Star Wars API
 export async function fetchStarWarsCharacter(name) {
     try {
         const response = await fetch(`${STAR_WARS_API}people/?search=${name}`);
@@ -25,6 +26,18 @@ export async function fetchStarWarsPlanet(name) {
     }
 }
 
+export async function fetchStarWarsStarship(name) {
+    try {
+        const response = await fetch(`${STAR_WARS_API}starships/search=${name}`);
+        const data = await response.json();
+        return data.results.length ? data.results[0] : null;
+    } catch (error) {
+        console.error(`Error obteniendo nave espacial de Star Wars: ${name}`, error);
+        return null;
+    }
+}
+
+// Información / Data Pokemon API
 export async function fetchPokemon(name) {
     try {
         const response = await fetch(`${POKEMON_API}pokemon/${name.toLowerCase()}`);

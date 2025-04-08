@@ -26,16 +26,16 @@ export async function interpretProblemWithAI(problem) {
         }
 
         const iaData = await response.json();
-        console.log('Datos extraidos por la IA:', iaData);
+        console.log('Datos extraídos por la IA:', iaData);
 
         if (iaData.choices && iaData.choices.length > 0) {
-            return iaData.choices[0].message.content;
+            const extractedData = JSON.parse(iaData.choices[0].message.content);
+            return extractedData;
         } else {
             throw new Error('La IA no devolvió una respuesta válida.');
         }
-
-        return iaData;
     } catch (error) {
         console.error('Error interpretando el problema con IA:', error);
+        return null;
     }
 }

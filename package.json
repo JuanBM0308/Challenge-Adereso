@@ -1,0 +1,19 @@
+{
+  "name": "challenge-adereso",
+  "version": "1.0.0",
+  "description": "Space to develop solution challenge of Adereso",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JuanBM0308/Challenge-Adereso.git"
+  },
+  "license": "ISC",
+  "author": "Juan BM",
+  "type": "module",
+  "main": "main.js",
+  "scripts": {
+    "test": "test-adereso"
+  },
+  "dependencies": {
+    "node-fetch": "^3.3.2"
+  }
+}
